@@ -186,7 +186,7 @@ function setTool(t) {
   if (t === 'pen') {
     canvas.isDrawingMode = true;
     const c = COLORS[currentColor];
-    canvas.freeDrawingBrush.color = c.fill;
+    canvas.freeDrawingBrush.color = c.fill + '99';
     canvas.freeDrawingBrush.width = SIZES[currentSize];
   } else {
     canvas.isDrawingMode = false;
@@ -198,7 +198,7 @@ function setColor(col) {
   document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('c-' + col).classList.add('active');
   if (canvas && canvas.isDrawingMode) {
-    canvas.freeDrawingBrush.color = COLORS[col].fill;
+    canvas.freeDrawingBrush.color = COLORS[col].fill + '99';
   }
 }
 
